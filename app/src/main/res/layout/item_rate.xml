@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/currencyIconIv"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/rateCode"
+        app:layout_constraintBottom_toBottomOf="@id/rateValue"
+        tools:src="@drawable/usd"/>
+
+    <TextView
+        android:id="@+id/rateCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/currencyIconIv"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="16dp"
+        tools:text="USD"
+        android:textColor="@android:color/black"
+        android:fontFamily="sans-serif-black"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/rateName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/currencyIconIv"
+        app:layout_constraintTop_toBottomOf="@id/rateCode"
+        android:layout_marginStart="16dp"
+        tools:text="USD Dollar"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/rateValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal|textNoSuggestions"
+        android:focusable="false"
+        android:clickable="false"
+        android:focusableInTouchMode="false"
+        android:hint="@string/rate_value_hint"
+        android:maxLength="7"
+        android:textDirection="rtl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
